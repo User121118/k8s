@@ -1,0 +1,17 @@
+---
+- hosts: all
+
+
+  tasks:
+  - name: deleting deployment
+    shell:
+     cmd: kubectl delete deployment django
+    ignore_errors: true
+
+  - name: apply deployment 
+    shell:
+     chdir: /opt/k8s/docker
+     cmd: kubectl apply -f deployment.yaml
+    ignore_errors: true
+  
+  

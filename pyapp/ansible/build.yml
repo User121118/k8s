@@ -1,0 +1,24 @@
+---
+- hosts: all
+
+
+  tasks:
+  - name: pull
+    shell:
+     chdir: /opt/k8s/docker
+     cmd: git pull
+    ignore_errors: false
+
+
+  - name: test
+    shell:
+     chdir: /opt/k8s/docker
+     cmd: pwd
+    ignore_errors: false
+
+
+  - name: build
+    shell:
+     chdir: /opt/k8s/docker
+     cmd: docker build -t krdsite24/djangob . && docker push krdsite24/djangob
+    ignore_errors: false

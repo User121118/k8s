@@ -1,0 +1,23 @@
+stages:
+  - build
+  - deploy
+#test
+variables:
+  ANSIBLE_FORCE_COLOR: 'true'
+
+build-stage:
+  stage: build
+  tags:
+    - k8s-runner
+  script:
+    - ansible-playbook -i ansible/hosts.yml  -v ansible/build.yml
+
+deploy-stage:
+
+  stage: deploy
+  tags:
+    - k8s-runner
+  script:
+    - ansible-playbook -i ansible/hosts.yml  -v ansible/deploy.yml
+    
+  
