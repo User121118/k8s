@@ -10,13 +10,6 @@
     ignore_errors: false
 
 
-  - name: test
-    shell:
-     chdir: /opt/k8s/docker
-     cmd: pwd
-    ignore_errors: false
-
-
   - name: build
     shell:
      chdir: /opt/k8s/docker

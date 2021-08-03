@@ -6,12 +6,12 @@
   - name: deleting deployment
     shell:
      cmd: kubectl delete deployment django
-    ignore_errors: true
+    ignore_errors: false
 
   - name: apply deployment 
     shell:
      chdir: /opt/k8s/docker
-     cmd: kubectl apply -f deployment.yaml
-    ignore_errors: true
+     cmd: kubectl apply -f k8s/deployment.yaml
+    ignore_errors: false
   
   
