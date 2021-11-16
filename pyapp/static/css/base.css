@@ -1,7 +1,7 @@
 body {
     font-family: "Roboto", sans-serif;
     font-size: 17px;
-    background-color: #fffff;
+    background-color: #8d1820;
 }
 
 .shadow {
@@ -10,12 +10,12 @@ body {
 
 .btn-danger {
     color: #fff;
-    background-color: #ffffff;
+    background-color: #f00000;
     border-color: #dc281e;
 }
 
 .masthead {
-    background: #3e28d1;
+    background: #b30202;
     height: auto;
     padding-bottom: 15px;
     box-shadow: 0 16px 48px #E3E7EB;

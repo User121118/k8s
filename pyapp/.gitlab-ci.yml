@@ -9,8 +9,7 @@ build-stage:
   stage: build
   tags:
     - k8s-runner
-  script:
-    - ansible-playbook -i ansible/hosts.yml  -v ansible/build.yml
+  script: docker build -t krdsite24/djangob . && docker push krdsite24/djangob
 
 deploy-stage:
 
@@ -18,6 +17,6 @@ deploy-stage:
   tags:
     - k8s-runner
   script:
-    - ansible-playbook -i ansible/hosts.yml  -v ansible/deploy.yml
+    - /home/gitlab-runner/.local/bin/ansible-playbook -i ansible/hosts.yml  -v ansible/deploy.yml
     
   
